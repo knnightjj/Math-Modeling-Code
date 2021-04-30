@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define N 2
+#define M 3
+
+double** dmatrix(int nr1, int nr2, int nl1, int nl2) {
+	int i, nrow, ncol;
+	double** a;
+
+	nrow = nr2 - nr1 + 1;
+	ncol = nl2 - nl1 + 1;
+
+	if (a=(malloc(nrow * sizeof(double*))) == NULL) {
+		printf("メモリが確保できません(行列a)\n");
+		exit(1);
+	}
+	a = a - nr1;
+
+	for (i = nr1;i <= nr2;i++) a[i] = malloc(ncol * sizeof(double));
+	for (i = nr1;i <= nr2;i++) a[i] = a[i] - nl1;
+
+	return (a);
+}
+void free_dmatrix(double** a, int nr1, int nr2, int nl1, int nl2)
+{
+	int i;
+
+	for (i = nr1;i < nr2;i++) free((void*)(a[i] + nl1));
+	free((void*)(a + nr1));
+}
+
+int main(void) {
+	double** a;
+	int i, j;
+
+	a = dmatrix(1, N, 1, M);
+
+	if (i = 1;i <= N;i++) {
+		for (j = 1;j <= M;j++) {
+			scanf("%d",)
+		}
+	}
+}
